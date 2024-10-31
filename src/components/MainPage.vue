@@ -585,6 +585,8 @@ Secure Transactions: Feel confident with our robust security measures.
       </div>
       <div class="justify-center sm:flex md:w-[75%]">
         <form @submit.prevent="submitEmail" class="text-white sm:w-[100%]">
+          <input type="hidden" name="" value="">
+
     <div class="sm:flex gap-5">
       <div class="border-[#EB8D41] shadow shadow-[#EB8D41] border-2 rounded-2xl flex p-3 mb-3 sm:mb-10 pl-5 items-center w-[100%]">
         <label for="fullname">Name:</label>
@@ -724,38 +726,35 @@ export default {
         phone: '',
         email: '',
         message: '',
-        submissionStatus: ''
+        access_key: 'c4220f18-088b-421f-aaf8-315a761bf02e'
       },
+      submissionStatus: '',
     }
   },
   methods: {
     //
     async submitEmail() {
-      console.log('sub,itted')
+      console.log('submitted')
       try {
-        const response = await fetch('https://hook.eu2.make.com/ofubxag22qcmhhfhrcb3l6qmn3fl7wts', {
+        const response = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(this.formData),
         });
-        this.submissionStatus = 'message is sent successfully!';
+        const resultJson = await response.json();
+        this.submissionStatus =
+          response.status === 200
+            ? "Form submitted successfully"
+            : resultJson.message;
 
-
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-
-        const result = await response.json();
-        this.submissionStatus = 'Email sent successfully!';
-        console.log('Success:', result);
+        this.resetForm();
         
         // Reset form data after successful submission
-        this.resetForm();
       } catch (error) {
-        console.error('Error sending email:', error);
-      }
+        console.log(error);
+        this.$refs.result.innerHTML = "Something went wrong!";      }
     },
     resetForm() {
       this.formData = {
