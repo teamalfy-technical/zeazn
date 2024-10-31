@@ -724,7 +724,7 @@ export default {
         phone: '',
         email: '',
         message: '',
-        submissionStatus: 'Email sent successfully!'
+        submissionStatus: ''
       },
     }
   },
@@ -740,6 +740,8 @@ export default {
           },
           body: JSON.stringify(this.formData),
         });
+        this.submissionStatus = 'message is sent successfully!';
+
 
         if (!response.ok) {
           throw new Error('Network response was not ok');
