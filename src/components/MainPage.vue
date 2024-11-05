@@ -1,8 +1,5 @@
 
 <template>
-
-  
-
     <!-- START:: Contact Modal -->
 <div v-if="isShowModal" class="fixed inset-0 z-50 flex justify-center items-center">
   <!-- Background Overlay -->
@@ -30,8 +27,6 @@
 <!-- END:: Contact Modal -->
 
 
-  
-
       <!-- START:: subscription Modal -->
 
       <div v-if="isShowModalEmail" class="fixed inset-0 z-50 flex justify-center items-center">
@@ -55,14 +50,14 @@
       on our upcoming launch, latest features, and events! Follow Zeazn Invest on Instagram, TikTok, & YouTube!
     </p>
   </div>
-</div>
+      </div>
         <!-- END:: subscription Modal -->
 
 
 
 
 
-  <!-- <h1 id="home"></h1> -->
+  <h1 id="home"></h1>
 <div class="bg-[#050505F2] w-[100%] overflow-y-hidden">
 
 
@@ -92,7 +87,7 @@
       </a>
       <a 
         :class="[isActive('#features') ? 'text-[#EB8D41] underline' : 'hover:text-[#EB8D41] hover:underline', 'transition-colors duration-1000']" 
-        href="#features">Features
+        href="#feature">Features
       </a>
       <a 
         :class="[isActive('#pricing') ? 'text-[#EB8D41] underline' : 'hover:text-[#EB8D41] hover:underline', 'transition-colors duration-1000']" 
@@ -104,7 +99,7 @@
       </a>
     </div>
   </nav>
-</div>
+    </div>
 
     <!-- END:: Navbar for Desktop -->
 
@@ -126,7 +121,7 @@
                   </a>
                   <a @click="toggleVisibility" 
                     :class="[isActive('#features') ? 'text-[#EB8D41] underline' : 'hover:text-[#EB8D41] hover:underline', 'transition-colors duration-1000 z-30 block relative']" 
-                    href="#features">Features
+                    href="#feature">Features
                   </a>
                   <a @click="toggleVisibility" 
                     :class="[isActive('#pricing') ? 'text-[#EB8D41] underline' : 'hover:text-[#EB8D41] hover:underline', 'transition-colors duration-1000 z-30 block relative pb-5']" 
@@ -208,7 +203,7 @@
                festivals & cultural displays, and many more.
                </p>
                <p class="mt-3">
-                  As long as you have a legion of fans and followers ready to support your project, Zeazn Invest Invest is the right platform to turn your 
+                  As long as you have a legion of fans and followers  support your project, Zeazn Invest is the right platform to turn your 
                   wildest ideas and creative expressions into lucrative opportunities, all funded by the people who believe in you the most, your fans & supporters.
               </p>
           </div>
@@ -350,7 +345,9 @@
       data-aos="fade-right"
       data-aos-duration="1000"
       data-aos-delay="50"
-      class="flex items-center md:w-[570px]">
+      class="flex items-center md:w-[570px]"
+      id="feature"
+      >
         <img class="w-7 md:w-10 h-7 md:h-10" src="../images/watch.png" alt="">
         <p class="text-7xl text-white mt-[-50px] px-2">.</p>
         <p>Watch Ideas Come to Life: Track the progress<br class="hidden md:block"/> of the projects you support.</p>
@@ -448,18 +445,56 @@ Secure Transactions: Feel confident with our robust security measures.
           data-aos="fade-right"
             data-aos-duration="1000"
             data-aos-delay="0"
-          class="flex border-2 rounded-3xl p-2 md:p-2 md:w-[40%] border-[#EB8D41] shadow shadow-[#EB8D41]">
-            <label for="">Name:</label>
-            <input class="bg-transparent focus:outline-none focus:ring-0 border-none w-full" type="text"  v-model="formData2.FULLNAME">
+          class="flex border-2 rounded-3xl p-2 md:p-0 items-center md:w-[40%] border-[#EB8D41] shadow shadow-[#EB8D41]">
+            <label class="pl-2" for="">Name:</label>
+            <input placeholder="Eg: John Doe" class="bg-transparent focus:outline-none focus:ring-0 border-none w-full" type="text"  v-model="formData2.FULLNAME">
           </div>
           <div 
           data-aos="fade-right"
             data-aos-duration="1000"
             data-aos-delay="0"
-          class="flex border-2 rounded-3xl p-2 mt-5 md:mt-0 md:p-2 md:w-[40%] border-[#EB8D41] shadow shadow-[#EB8D41]">
-            <label for="">Email:</label>
-            <input class="bg-transparent focus:outline-none focus:ring-0 w-full border-none" type="text"  v-model="formData2.EMAIL">
+          class="flex border-2 rounded-3xl p-2 mt-5 md:mt-0 md:p-0 items-center md:w-[40%] border-[#EB8D41] shadow shadow-[#EB8D41]">
+            <label class="pl-2" for="">Email:</label>
+            <input placeholder="Eg: johndoe27@gmail.com" class="bg-transparent focus:outline-none focus:ring-0 w-full border-none" type="text"  v-model="formData2.EMAIL">
           </div>
+          </div>
+
+          <div class="md:flex justify-center gap-12 mt-5 md:mt-9 mx-2 md:mx-0 mb-4 sm:mb-8">
+            <div 
+          data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="0"
+          class="flex border-2 rounded-3xl p-2 md:p-0 items-center md:w-[40%] border-[#EB8D41] shadow shadow-[#EB8D41]">
+            <label class="pl-2" for="">Phone:</label>
+            <input placeholder="Eg: +233 2444 000 000" class="bg-transparent focus:outline-none focus:ring-0 border-none w-full" type="text"  v-model="formData2.PHONE">
+          </div>
+          <div 
+          data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="0"
+          class="flex border-2 rounded-3xl p-2 mt-5 md:mt-0 md:p-0 items-center md:w-[40%] border-[#EB8D41] shadow shadow-[#EB8D41]">
+            <label class="pl-2" for="">Location:</label>
+            <input placeholder="Eg: Ghana, Accra" class="bg-transparent focus:outline-none focus:ring-0 w-full border-none" type="text"  v-model="formData2.LOCATION">
+          </div>
+          </div>
+
+          <div class="md:flex justify-center gap-12 mt-5 md:mt-9 mx-2 md:mx-0 mb-4 sm:mb-8">
+            <div 
+          data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="0"
+          class="flex border-2 rounded-3xl p-2 md:p-0 items-center md:w-[40%] border-[#EB8D41] shadow shadow-[#EB8D41]">
+            <label class="pl-2" for="">Media:</label>
+            <input placeholder="Eg: TikTok @sensation_GH" class="bg-transparent focus:outline-none focus:ring-0 border-none w-full" type="text"  v-model="formData2.MEDIA">
+          </div>
+          <!-- <div 
+          data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="0"
+          class="flex border-2 rounded-3xl p-2 mt-5 md:mt-0 md:p-0 items-center md:w-[40%] border-[#EB8D41] shadow shadow-[#EB8D41]">
+            <label class="pl-2" for="">Email:</label>
+            <input class="bg-transparent focus:outline-none focus:ring-0 w-full border-none" type="text"  v-model="formData2.EMAIL">
+          </div> -->
           </div>
         
           <div class="text-center">
@@ -471,7 +506,7 @@ Secure Transactions: Feel confident with our robust security measures.
                 class="bg-[#EB8D41] w-[100%] md:w-72 rounded-3xl p-2 md:p-1 sm:text-4xl md:text-xl px-12 hover:text-[#EB8D41] hover:underline transition-colors duration-1000 hover:bg-black hover:border-white border-2 border-[#EB8D41]">Sign me up</button>
               </div>
         </form>
-            </div>
+      </div>
     <!-- END::Be a Part of Something Bigger -->
 
     <!-- START:: creators wanted -->
@@ -570,7 +605,7 @@ Secure Transactions: Feel confident with our robust security measures.
           <a href="#scan">
             <button class=" hover:underline transition-colors duration-1000 hover:bg-[#EB8D41] border border-[#EB8D41] p-2 px-4 rounded-3xl md:px-5">Download the App</button>
           </a>
-          <a href="#signup">
+          <a id="pricing" href="#signup">
             <button class="p-1 bg-[#EB8D41] px-5 md:px-12 rounded-3xl hover:text-[#EB8D41] hover:underline transition-colors duration-1000 hover:bg-black hover:border-white border-2 border-[#EB8D41]">Sign Up</button>
           </a>
          </div>
@@ -636,7 +671,7 @@ Secure Transactions: Feel confident with our robust security measures.
       data-aos-duration="1500"
       data-aos-delay="500"
     >
-      <img class="hover:border-2 md:w-[85%] md:h-[500px]" src="../images/head3.png" alt="">
+      <img class="hover:border-2 md:w-[85%] md:h-[500px] rounded" src="../images/ignite.jpeg" alt="">
     </div>
     <h1 id="contact"></h1>
 
@@ -825,6 +860,9 @@ export default {
         access_key: '1d768901-053a-4fd1-bd37-e050cfcaff84',
         FULLNAME: '',
         EMAIL: '',
+        LOCATION: '',
+        MEDIA: '',
+        PHONE: ''
       },
       submissionStatus2: '',
     }
