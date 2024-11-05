@@ -1,9 +1,74 @@
 
 <template>
+
+  
+
+    <!-- START:: Contact Modal -->
+<div v-if="isShowModal" class="fixed inset-0 z-50 flex justify-center items-center">
+  <!-- Background Overlay -->
+  <div class="absolute inset-0 bg-black opacity-80" @click="closeModal"></div>
+
+  <!-- Modal Content -->
+  <div class="relative z-50 w-[90%] md:w-[50%] bg-white text-center p-12 text-black rounded-lg">
+    <!-- Close Button -->
+    <button @click="closeModal" class="absolute top-4 right-4">
+      <img class="w-6 h-6" src="../images/close.png" alt="Close">
+    </button>
+
+    <!-- Success Image and Logo -->
+    <img class="bg-slate-900 mx-auto w-20 rounded-full mt-4" src="../images/logo5.png" alt="Logo">
+    <img class="mx-auto w-44 mt-4" src="../images/success2.jpg" alt="Success">
+
+    <!-- Message Text -->
+    <p class="font-bold mt-5">
+      Thank you for submitting your message request to Zeazn. <br>
+      A representative of Zeazn will respond to your inquiry directly <br>
+      via your provided email address or contact number.
+    </p>
+  </div>
+</div>
+<!-- END:: Contact Modal -->
+
+
+  
+
+      <!-- START:: subscription Modal -->
+
+      <div v-if="isShowModalEmail" class="fixed inset-0 z-50 flex justify-center items-center">
+  <!-- Background Overlay -->
+  <div class="absolute inset-0 bg-black opacity-80" @click="closeModal"></div>
+
+  <!-- Modal Content -->
+  <div class="relative z-50 w-[90%] md:w-[50%] bg-white text-center p-12 text-black rounded-lg">
+    <!-- Close Button -->
+    <button @click="closeModalEmail" class="absolute top-4 right-4">
+      <img class="w-6 h-6" src="../images/close.png" alt="Close">
+    </button>
+
+    <!-- Success Image and Logo -->
+    <img class="bg-slate-900 mx-auto w-20 rounded-full mt-4" src="../images/logo5.png" alt="Logo">
+    <img class="mx-auto w-44 mt-4" src="../images/success2.jpg" alt="Success">
+
+    <!-- Message Text -->
+    <p class="font-bold mt-5">
+      Thank You for signing up to the Zeazn Invest App's newsletter. You will be added to our contact list for updates 
+      on our upcoming launch, latest features, and events! Follow Zeazn Invest on Instagram, TikTok, & YouTube!
+    </p>
+  </div>
+</div>
+        <!-- END:: subscription Modal -->
+
+
+
+
+
   <!-- <h1 id="home"></h1> -->
 <div class="bg-[#050505F2] w-[100%] overflow-y-hidden">
+
+
+
     <!-- START:: Navbar for Desktop -->
-    <div class="fixed top-0 w-[100%] bg-[#050505F2] border-b-2 shadow-2xl z-50 pb-3 border-slate-900">
+    <div class="fixed top-0 w-[100%] bg-[#050505F2] border-b-2 shadow-2xl z-40 pb-3 border-slate-900">
   <nav class="flex justify-between items-center px-3 pt-2">
     <img class="w-32 h-16" src="../images/logo5.png" alt="Company Logo"/>
     <img 
@@ -76,8 +141,13 @@
               </nav>
             <!-- END:: Navbar for mobile -->
 
+
+            
+
 <!-- FAINT LINE UNDER THE NAV -->
     <div class="bg-slate-950 h-1 mb-16 sm:mb-20 my-6"></div>
+    
+
 
 <div class="px-3 sm:px-12">
     <!-- START:: Hero section -->
@@ -380,7 +450,7 @@ Secure Transactions: Feel confident with our robust security measures.
             data-aos-delay="0"
           class="flex border-2 rounded-3xl p-2 md:p-2 md:w-[40%] border-[#EB8D41] shadow shadow-[#EB8D41]">
             <label for="">Name:</label>
-            <input class="bg-transparent focus:outline-none w-[78%]" type="text"  v-model="formData2.FULLNAME">
+            <input class="bg-transparent focus:outline-none focus:ring-0 border-none w-full" type="text"  v-model="formData2.FULLNAME">
           </div>
           <div 
           data-aos="fade-right"
@@ -388,7 +458,7 @@ Secure Transactions: Feel confident with our robust security measures.
             data-aos-delay="0"
           class="flex border-2 rounded-3xl p-2 mt-5 md:mt-0 md:p-2 md:w-[40%] border-[#EB8D41] shadow shadow-[#EB8D41]">
             <label for="">Email:</label>
-            <input class="bg-transparent focus:outline-none w-[78%]" type="text"  v-model="formData2.EMAIL">
+            <input class="bg-transparent focus:outline-none focus:ring-0 w-full border-none" type="text"  v-model="formData2.EMAIL">
           </div>
           </div>
         
@@ -401,8 +471,6 @@ Secure Transactions: Feel confident with our robust security measures.
                 class="bg-[#EB8D41] w-[100%] md:w-72 rounded-3xl p-2 md:p-1 sm:text-4xl md:text-xl px-12 hover:text-[#EB8D41] hover:underline transition-colors duration-1000 hover:bg-black hover:border-white border-2 border-[#EB8D41]">Sign me up</button>
               </div>
         </form>
-            <p v-if="submissionStatus2" class="text-center text-[#EB8D41]">{{ submissionStatus2 }}</p>
-
             </div>
     <!-- END::Be a Part of Something Bigger -->
 
@@ -574,61 +642,65 @@ Secure Transactions: Feel confident with our robust security measures.
 
     <!-- START::Contact us  -->
     <div class="text-white my-24 md:flex gap-10">
-      <div class="border-2 rounded-tr rounded-bl rounded-[20%] border-[#EB8D41] border-dashed p-3 sm:p-10 mb-5">
-        <h1 class="text-3xl sm:text-5xl text-center hover:text-slate-300">Connect With US</h1>
-        <div class="text-start mt-5 sm:mt-10 space-y-5">
-          <p class="flex gap-5"><img class="w-7" src="../images/email.png" alt=""> <span>zeaznltd@gmail.com</span> </p>
-          <p class="flex gap-5"><img class="w-7" src="../images/phone2.png" alt=""> <span>+233 53 836 2526</span> </p>
-          <p class="flex gap-5"><img class="w-7 h-9" src="../images/locator.png" alt=""> <span>36 Sandpiper Street, Community 20 (Lashibi), Accra, Ghana.</span> </p>
+  <div class="border-2 rounded-tr rounded-bl rounded-[20%] border-[#EB8D41] border-dashed p-3 sm:p-10 mb-5">
+    <h1 class="text-3xl sm:text-5xl text-center hover:text-slate-300">Connect With Us</h1>
+    <div class="text-start mt-5 sm:mt-10 space-y-5">
+      <p class="flex gap-5 items-center">
+        <img class="w-7" src="../images/email.png" alt="Email Icon">
+        <span>zeaznltd@gmail.com</span>
+      </p>
+      <p class="flex gap-5 items-center">
+        <img class="w-7" src="../images/phone2.png" alt="Phone Icon">
+        <span>+233 53 836 2526</span>
+      </p>
+      <p class="flex gap-5 items-center">
+        <img class="w-7 h-9" src="../images/locator.png" alt="Location Icon">
+        <span>36 Sandpiper Street, Community 20 (Lashibi), Accra, Ghana.</span>
+      </p>
+    </div>
+    <div class="flex justify-center sm:justify-start gap-4 md:gap-5 mt-5">
+      <a href="#"><img class="w-4 h-4" src="../images/twitter.png" alt="Twitter"></a>
+      <a href="#"><img class="w-5 h-5" src="../images/linkedin.png" alt="LinkedIn"></a>
+      <a href="#"><img class="w-5 h-5" src="../images/facebook.png" alt="Facebook"></a>
+      <a href="#"><img class="w-5 h-5" src="../images/web.png" alt="Website"></a>
+    </div>
+  </div>
+
+  <div class="flex justify-center sm:flex md:w-[75%]">
+    <form @submit.prevent="submitEmail" class="text-white w-full">
+      <div class="sm:flex gap-5">
+        <div class="border-[#EB8D41] shadow shadow-[#EB8D41] border-2 rounded-2xl flex p-3 mb-3 sm:mb-10 pl-5 items-center w-full">
+          <label for="fullname" class="mr-3">Name:</label>
+          <input v-model="formData.fullname" aria-label="Name" class="bg-transparent focus:outline-none focus:ring-0 border-none w-full" type="text" id="fullname" required>
         </div>
-
-        <div class="flex justify-center sm:justify-start gap-4   md:gap-5 mt-5">
-          <a href="#"> <img class="w-4 h-4" src="../images/twitter.png" alt=""></a>
-      <a href="#"> <img class="w-5 h-5" src="../images/linkedin.png" alt=""></a>
-      <a href="#"> <img class="w-5 h-5" src="../images/facebook.png" alt=""></a>
-      <a href="#"> <img class="w-5 h-5" src="../images/web.png" alt=""></a>
+        <div class="border-[#EB8D41] shadow shadow-[#EB8D41] border-2 rounded-2xl flex p-3 sm:p-5 md:p-3 mb-3 sm:mb-10 pl-5 items-center w-full">
+          <label for="company" class="mr-3">Company:</label>
+          <input  v-model="formData.company" aria-label="Company" class="bg-transparent focus:outline-none focus:ring-0 border-none w-full" type="text" id="company" required>
         </div>
       </div>
-      <div class="justify-center sm:flex md:w-[75%]">
-        <form @submit.prevent="submitEmail" class="text-white sm:w-[100%]">
-          <input type="hidden" name="" value="">
-
-    <div class="sm:flex gap-5">
-      <div class="border-[#EB8D41] shadow shadow-[#EB8D41] border-2 rounded-2xl flex p-3 mb-3 sm:mb-10 pl-5 items-center w-[100%]">
-        <label for="fullname">Name:</label>
-        <input v-model="formData.fullname" class="bg-transparent focus:outline-none" type="text" id="fullname" required>
+      <div class="sm:flex gap-5">
+        <div class="border-[#EB8D41] shadow shadow-[#EB8D41] border-2 rounded-2xl flex p-3 sm:p-5 md:p-3 mb-3 sm:mb-10 pl-5 items-center w-full">
+          <label for="phone" class="mr-3">Phone:</label>
+          <input  v-model="formData.phone" aria-label="Phone" class="bg-transparent focus:outline-none focus:ring-0 border-none w-full" type="text" id="phone" required>
+        </div>
+        <div class="border-[#EB8D41] shadow shadow-[#EB8D41] border-2 rounded-2xl flex p-3 mb-3 sm:mb-10 pl-5 items-center w-full">
+          <label for="email" class="mr-3">Email:</label>
+          <input  v-model="formData.email" aria-label="Email" class="bg-transparent focus:outline-none focus:ring-0 border-none w-full" type="email" id="email" required>
+        </div>
       </div>
-      <div class="border-[#EB8D41] shadow shadow-[#EB8D41] border-2 rounded-2xl flex p-3 sm:p-5 md:p-3 mb-3 sm:mb-10 pl-5 items-center w-[100%]">
-        <label for="company">Company:</label>
-        <input v-model="formData.company" class="bg-transparent focus:outline-none w-[55%]" type="text" id="company" required>
+      <div class="border-[#EB8D41] shadow shadow-[#EB8D41] border-2 rounded-2xl flex p-3 mb-5 sm:mb-10 pl-5 items-start w-full">
+        <label for="message" class="mr-3">Message:</label>
+        <textarea  v-model="formData.message" aria-label="Message" id="message" rows="3" class="bg-transparent focus:outline-none focus:ring-0 border-none w-full" required></textarea>
       </div>
-    </div>
-
-    <div class="sm:flex gap-5">
-      <div class="border-[#EB8D41] shadow shadow-[#EB8D41] border-2 rounded-2xl flex p-3 sm:p-5 md:p-3 mb-3 sm:mb-10 pl-5 items-center w-[100%]">
-        <label for="phone">Phone:</label>
-        <input v-model="formData.phone" class="bg-transparent focus:outline-none" type="text" id="phone" required>
+      <div class="text-center">
+        <button class="bg-[#EB8D41] w-full rounded-3xl py-3 sm:py-4 px-6 sm:text-2xl hover:text-[#EB8D41] hover:underline transition-colors duration-300 hover:bg-black hover:border-white border-2 border-[#EB8D41]" type="submit">
+          Submit
+        </button>
       </div>
-      <div class="border-[#EB8D41] shadow shadow-[#EB8D41] border-2 rounded-2xl flex p-2 mb-3 sm:mb-10 pl-5 items-center w-[100%]">
-        <label for="email">Email:</label>
-        <input v-model="formData.email" class="bg-transparent focus:outline-none w-[55%]" type="email" id="email" required>
-      </div>
-    </div>
+    </form>
+  </div>
+</div>
 
-    <div class="border-[#EB8D41] shadow shadow-[#EB8D41] border-2 rounded-2xl flex p-3 mb-5 sm:mb-10 pl-5 items-start w-[100%]">
-      <label for="message">Message:</label>
-      <textarea v-model="formData.message" id="message" cols="70" rows="3" class="bg-transparent focus:outline-none text-start" required></textarea>
-    </div>
-
-    <div class="text-center">
-      <button class="bg-[#EB8D41] w-[100%] rounded-3xl p-2 md:p-1 sm:text-4xl md:text-xl px-12 hover:text-[#EB8D41] hover:underline transition-colors duration-1000 hover:bg-black hover:border-white border-2 border-[#EB8D41]" type="submit">Submit</button>
-    </div>
-
-    <p v-if="submissionStatus" class="text-center text-[#EB8D41]">{{ submissionStatus }}</p>
-  </form>
-       </div>
-      
-     </div>
     <!-- END::Contact us  -->
 
     <!-- START:: footer -->
@@ -690,7 +762,14 @@ Secure Transactions: Feel confident with our robust security measures.
      </div>
     <!-- END:: media -->
   </div>
+
+
+
+
+
   </div>
+
+
 </template>
 <script>
 import { defineComponent, onMounted, onBeforeUnmount, ref } from 'vue'
@@ -718,9 +797,16 @@ import image30 from '../images/last (2).jpg'
 import image32 from '../images/last (1).jpg'
 import image33 from '../images/last (3).jpg'
 import image34 from '../images/last (5).jpg'
+
+// import { ref } from 'vue'
+import { FwbButton, FwbModal } from 'flowbite-vue'
+
 export default {
+
   data() {
     return {
+      isShowModal: false,
+      isShowModalEmail: false,
       hide: true,
       images: [image11, image13, image14, image16, image17, image18, image19,image20, image21, image22, image23, image24, image26, image27, image28, image30, image32, image33, image34],
       autoplayInterval: null, // To store the interval ID
@@ -740,35 +826,53 @@ export default {
         FULLNAME: '',
         EMAIL: '',
       },
-      submissionStatus: '',
       submissionStatus2: '',
     }
   },
   methods: {
     //
-    async submitEmail() {
-      console.log('submitted')
-      try {
-        const response = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(this.formData),
-        });
-        const resultJson = await response.json();
-        this.submissionStatus =
-          response.status === 200
-            ? "Form submitted successfully"
-            : resultJson.message;
+     closeModal() {
+  this.isShowModal = false
+},
+    //
+     closeModalEmail() {
+  this.isShowModalEmail = false
+},
 
-        this.resetForm();
-        
-        // Reset form data after successful submission
-      } catch (error) {
-        console.log(error);
-        this.$refs.result.innerHTML = "Something went wrong!";      }
-    },
+ showModal() {
+  this.isShowModal = true
+},
+
+ showModalEmail() {
+  this.isShowModalEmail = true
+},
+async submitEmail() {
+  console.log('submitted');
+  try {
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(this.formData),
+    });
+    
+    const resultJson = await response.json();
+
+    if (response.ok) {
+      this.showModal(); // Call showModal to display the modal
+      this.resetForm(); // Reset the form data after successful submission
+    } else {
+      this.submissionStatus = resultJson.message || "Submission failed!";
+      this.$refs.result.innerHTML = this.submissionStatus; // Display error message in the result element
+    }
+  } catch (error) {
+    console.error(error);
+    this.submissionStatus = "Something went wrong!";
+    this.$refs.result.innerHTML = this.submissionStatus; // Display error message in the result element
+  }
+},
+
     resetForm() {
       this.formData = {
         fullname: '',
@@ -780,28 +884,33 @@ export default {
     },
     //
     async signMeup() {
-      console.log('submitted')
-      try {
-        const response = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(this.formData2),
-        });
-        const resultJson = await response.json();
-        this.submissionStatus2 =
-          response.status === 200
-            ? "Form submitted successfully"
-            : resultJson.message;
+  console.log('submitted');
+  try {
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(this.formData2),
+    });
+    
+    const resultJson = await response.json();
 
-        this.resetForm2();
-        
-        // Reset form data after successful submission
-      } catch (error) {
-        console.log(error);
-        this.$refs.result.innerHTML = "Something went wrong!";      }
-    },
+    if (response.ok) {
+      this.showModalEmail(); // Call showModal to display the modal
+      this.resetForm(); // Reset the form data after successful submission
+    } else {
+      this.submissionStatus = resultJson.message || "Submission failed!";
+      this.$refs.result.innerHTML = this.submissionStatus; // Display error message in the result element
+    }
+  } catch (error) {
+    console.error(error);
+    this.submissionStatus = "Something went wrong!";
+    this.$refs.result.innerHTML = this.submissionStatus; // Display error message in the result element
+  }
+},
+
+
     resetForm2() {
       this.formData2 = {
         name2: '',
@@ -842,6 +951,8 @@ export default {
   components: {
     Carousel,
     Slide,
+    FwbButton,
+    FwbModal,
     Pagination,
   },
   mounted() {
