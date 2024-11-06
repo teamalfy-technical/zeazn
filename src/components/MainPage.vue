@@ -770,11 +770,11 @@ Secure Transactions: Feel confident with our robust security measures.
         </div>
         <div class="flex flex-col items-center space-y-2 text-center md:items-start md:text-left">
         <h1 class="font-bold md:font-normal mt-5 hover:underline">Important Links</h1>
-        <a class="hover:text-[#EB8D41] hover:underline transition-colors duration-1000" href="#">Home</a>
+        <a class="hover:text-[#EB8D41] hover:underline transition-colors duration-1000" href="#home">Home</a>
         <a class="hover:text-[#EB8D41] hover:underline transition-colors duration-1000" href="#about">About</a>
         <a class="hover:text-[#EB8D41] hover:underline transition-colors duration-1000" href="#how">How it Works</a>
         <a class="hover:text-[#EB8D41] hover:underline transition-colors duration-1000" href="#feature">Features</a>
-        <a class="hover:text-[#EB8D41] hover:underline transition-colors duration-1000" href="#">Pricing</a>
+        <a class="hover:text-[#EB8D41] hover:underline transition-colors duration-1000" href="#pricing">Pricing</a>
       </div>
 
         <div class="flex flex-col items-center space-y-1 text-center md:items-start md:text-left">
@@ -840,6 +840,8 @@ export default {
 
   data() {
     return {
+      submissionStatus: '',
+      submissionStatus2: '',
       isShowModal: false,
       isShowModalEmail: false,
       hide: true,
