@@ -196,7 +196,7 @@
              <p
 
              >
-            The Artist working on their lastest album, the Movie Director producing a new film, the Content Creator releasing their
+            The Artist working on their latest album, the Movie Director producing a new film, the Content Creator releasing their
              latest Tik Tok/Youtube
              comedic skit or virtual food tour, the Fashion Influencer on Instagram, the Podcaster interviewing their standout
               guests, the Theatre Group organising their newest breakout play, the marketer putting together the largest music
