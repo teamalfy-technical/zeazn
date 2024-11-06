@@ -671,7 +671,7 @@ Secure Transactions: Feel confident with our robust security measures.
       data-aos-duration="1500"
       data-aos-delay="500"
     >
-      <img class="hover:border-2 md:w-[85%] md:h-[500px] rounded" src="../images/ignite.jpeg" alt="">
+      <img class="hover:border-2 md:w-[85%] md:h-[500px] rounded" src="../images/head2.png" alt="">
     </div>
     <h1 id="contact"></h1>
 
@@ -864,7 +864,6 @@ export default {
         MEDIA: '',
         PHONE: ''
       },
-      submissionStatus2: '',
     }
   },
   methods: {
@@ -936,7 +935,7 @@ async submitEmail() {
 
     if (response.ok) {
       this.showModalEmail(); // Call showModal to display the modal
-      this.resetForm(); // Reset the form data after successful submission
+      this.resetForm2(); // Reset the form data after successful submission
     } else {
       this.submissionStatus = resultJson.message || "Submission failed!";
       this.$refs.result.innerHTML = this.submissionStatus; // Display error message in the result element
@@ -951,8 +950,11 @@ async submitEmail() {
 
     resetForm2() {
       this.formData2 = {
-        name2: '',
-        email2: '',
+        FULLNAME: '',
+        EMAIL: '',
+        LOCATION: '',
+        MEDIA: '',
+        PHONE: ''
       };
     },
         // Check if the current hash matches the link's hash
