@@ -13,6 +13,9 @@ const routes = [
 const router = createRouter({
   history: createWebHashHistory(), // Use hash mode if you want # in the URL
   routes,
+  scrollBehavior() {
+    return { top: 0 }; // always scroll to top on route change
+  }
 });
 
 export default router;
