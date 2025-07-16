@@ -1,9 +1,13 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-import MainPage from './MainPage.vue'; // Import your components
+import MainPage from './components/MainPage.vue'; // Import your components
+import PrivacyPolicy from './components/PrivacyPolicy.vue'
+
 
 const routes = [
   { path: '/', component: MainPage },
-  // Other routes...
+  {
+    path: '/privacy-policy', component: PrivacyPolicy
+  }
 ];
 
 const router = createRouter({
