@@ -1,20 +1,29 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
-import MainPage from './components/MainPage.vue'; // Import your components
-import PrivacyPolicy from './components/PrivacyPolicy.vue'
-
+import { createRouter, createWebHistory } from 'vue-router';
+import MainPage from './components/MainPage.vue';
 
 const routes = [
-  { path: '/', component: MainPage },
+  { path: '/', name: 'Home', component: MainPage },
   {
-    path: '/privacy-policy', component: PrivacyPolicy
+    path: '/privacy-policy',
+    name: 'PrivacyPolicy',
+    component: () => import('./components/PrivacyPolicy.vue') // lazy-loaded
+  },
+  {
+    path: '/terms',
+    name: 'Terms',
+    component: () => import('./components/TermsAndConditions.vue') // lazy-loaded
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: '/'
   }
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(), // Use hash mode if you want # in the URL
+  history: createWebHistory(), // Clean URLs here
   routes,
   scrollBehavior() {
-    return { top: 0 }; // always scroll to top on route change
+    return { top: 0 };
   }
 });
 

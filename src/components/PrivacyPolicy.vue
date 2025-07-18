@@ -1,20 +1,10 @@
 <template>
-  <section class="bg-black text-white pb-16 px-6 md:px-12 lg:px-20 max-w-6xl mx-auto relative">
+  <section class="bg-[#050505F2] text-white px-6 md:px-12 lg:px-20 mx-auto relative">
     <!-- Scroll Anchor -->
     <div id="top"></div>
 
 <!-- Back to Home Button -->
 <!-- Back to Home Button (Top Left) -->
-<router-link
-  to="/"
-  class="absolute top-6 left-6 bg-[#EB8D41] text-black font-semibold px-4 py-2 rounded-full shadow hover:bg-orange-500 transition z-50"
-  data-aos="zoom"
-  data-aos-delay="1000"
-  data-aos-duration="1000"
-  title="Back to Homepage"
->
-  🏠 Home
-</router-link>
 
 
 
@@ -71,10 +61,10 @@
     </marquee>
 
     <!-- Footer -->
-    <footer class="mt-20 border-t border-gray-700 pt-8 text-center text-gray-400 text-sm" data-aos="zoom-in" data-aos-delay="1000" data-aos-duration="1000">
+    <!-- <footer class="mt-20 border-t border-gray-700 pt-8 text-center text-gray-400 text-sm" data-aos="zoom-in" data-aos-delay="1000" data-aos-duration="1000">
       <p>© 2025 Zeazn Ltd. All rights reserved.</p>
       <p>📬 Contact: <a href="mailto:privacy@zeazn.com" class="text-[#EB8D41] underline">privacy@zeazn.com</a></p>
-    </footer>
+    </footer> -->
 
     <!-- Back to Top Button -->
     <button
@@ -106,7 +96,7 @@ export default {
           title: '1. Who We Are',
           icon: '👤',
           content: `Zeazn Ltd. operates the Zeazn marketplace and crowdfunding platform.<br>
-            📍 <em>[Insert full address]</em><br>
+            
             📧 <a href="mailto:privacy@zeazn.com" class="text-[#EB8D41] underline">privacy@zeazn.com</a><br>
             Zeazn Ltd. is your data controller if you're in the EEA.`
         },
@@ -189,7 +179,6 @@ export default {
           title: '12. Contact Us',
           icon: '📬',
           content: `Email: <a href="mailto:privacy@zeazn.com" class="text-[#EB8D41] underline">privacy@zeazn.com</a><br>
-            Postal: <em>[Insert full address]</em><br>
             You can report issues to your local data authority, but we prefer resolving them directly.`
         }
       ]
