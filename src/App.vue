@@ -35,7 +35,7 @@ onMounted(() => {
         <img
           @click="toggleVisibility"
           class="w-12 h-10 mt-5 md:hidden cursor-pointer"
-          src="../images/hum2.png"
+          src="./images/hum2.png"
           alt="Menu Icon"
         />
         <div
